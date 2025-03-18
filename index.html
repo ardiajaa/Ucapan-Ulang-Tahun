@@ -5,149 +5,875 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Happy Birthday Anisa Aulia :)</title>
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400" rel="stylesheet" />
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <link rel="stylesheet" href="styles/main.css" />
-  <script src="https://cdn.rawgit.com/bungfrangki/efeksalju/2a7805c7/efek-salju.js" type="text/javascript"></script>
+  <title>Happy Birthday My Love 💕</title>
+  <link rel="shortcut icon" type="image/png" href="/api/placeholder/32/32" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    :root {
+      --primary-color: #ff85a2;
+      --secondary-color: #7ec4cf;
+      --accent-color: #ffd639;
+      --text-color: #2e3e50;
+      --light-color: #fff9f9;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Comic Neue', cursive;
+      margin: 0;
+      background: linear-gradient(135deg, #fce4ec, #e1f5fe);
+      color: var(--text-color);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    .song {
+      visibility: hidden;
+    }
+    
+    .container {
+      height: 100vh;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      visibility: hidden;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .container > div {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+    }
+    
+    .greeting-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 4rem;
+      color: var(--primary-color);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .greeting-subtitle {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-top: 15px;
+      color: var(--text-color);
+    }
+    
+    .birthday-message {
+      font-size: 2.2rem;
+      font-family: 'Dancing Script', cursive;
+      color: var(--primary-color);
+      margin: 20px 0;
+    }
+    
+    .message-box {
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+      backdrop-filter: blur(4px);
+      border: 2px solid var(--primary-color);
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      width: 80%;
+      max-width: 600px;
+    }
+    
+    .message-box p {
+      margin: 0;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    .message-box span {
+      visibility: hidden;
+    }
+    
+    .send-btn {
+      background-color: var(--primary-color);
+      border-radius: 50px;
+      bottom: -20px;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      position: absolute;
+      right: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .send-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .thought {
+      font-size: 1.8rem;
+      left: 0;
+      position: absolute;
+      right: 0;
+      color: var(--text-color);
+    }
+    
+    .special-text {
+      border-radius: 10px;
+      display: inline-block;
+      padding: 5px 8px;
+      background-color: var(--accent-color);
+      color: var(--text-color);
+      font-weight: bold;
+    }
+    
+    .heart-text {
+      font-size: 3.5rem;
+      color: var(--primary-color);
+    }
+    
+    .heart-text span {
+      display: inline-block;
+    }
+    
+    .big-text span {
+      font-size: 6rem;
+      font-family: 'Dancing Script', cursive;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-shadow: 3px 3px 0px var(--light-color), 6px 6px 0px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+    
+    .birthday-section {
+      position: relative;
+      z-index: 1;
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .profile-picture {
+      border-radius: 50%;
+      box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+      border: 5px solid white;
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .hat {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -70px;
+      width: 100px;
+      z-index: 2;
+    }
+    
+    .wish {
+      margin-top: 30px;
+      padding: 20px;
+    }
+    
+    .wish-hbd {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      margin: 0;
+      color: var(--primary-color);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .wish-message {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 15px 0 0;
+      color: var(--text-color);
+    }
+    
+    .balloons {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: -1;
+    }
+    
+    .balloon {
+      position: absolute;
+      bottom: -100px;
+      animation: float-up 12s ease-in-out infinite;
+      opacity: 0.8;
+    }
+    
+    @keyframes float-up {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(20deg);
+        opacity: 0;
+      }
+    }
+    
+    .confetti {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    
+    .confetti-piece {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent-color);
+      border-radius: 2px;
+      top: -20px;
+      opacity: 0;
+    }
+    
+    .hearts {
+      height: 100%;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: -1;
+    }
+    
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--primary-color);
+      transform: rotate(45deg);
+      top: -20px;
+      opacity: 0;
+    }
+    
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+    }
+    
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+    
+    .heart:after {
+      left: -10px;
+      top: 0;
+    }
+    
+    .final-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+    
+    .final-section p {
+      font-size: 1.8rem;
+      margin: 15px 0;
+    }
+    
+    #replay {
+      color: var(--primary-color);
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: underline;
+      transition: all 0.3s ease;
+    }
+    
+    #replay:hover {
+      color: var(--secondary-color);
+      transform: scale(1.05);
+    }
+    
+    .last-smile {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+    }
+    
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .greeting-title {
+        font-size: 3rem;
+      }
+      
+      .greeting-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .birthday-message {
+        font-size: 1.8rem;
+      }
+      
+      .message-box {
+        width: 90%;
+      }
+      
+      .thought {
+        font-size: 1.5rem;
+      }
+      
+      .big-text span {
+        font-size: 4rem;
+      }
+      
+      .profile-picture {
+        width: 200px;
+        height: 200px;
+      }
+      
+      .hat {
+        width: 80px;
+        top: -60px;
+      }
+      
+      .wish-hbd {
+        font-size: 2.2rem;
+      }
+      
+      .wish-message {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .greeting-title {
+        font-size: 2.5rem;
+      }
+      
+      .message-box {
+        padding: 15px;
+      }
+      
+      .message-box p {
+        font-size: 1rem;
+      }
+      
+      .thought {
+        font-size: 1.2rem;
+      }
+      
+      .big-text span {
+        font-size: 3rem;
+      }
+      
+      .profile-picture {
+        width: 180px;
+        height: 180px;
+      }
+      
+      .hat {
+        width: 60px;
+        top: -50px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
   <audio class="song" loop autoplay>
-    <source src="./music/hbd.mpeg">
+    <source src="./music/where.mp3">
     </source>
     Your browser isn't invited for super fun audio time.
   </audio>
 
   <div class="container">
     <div class="one">
-      <h1 class="one">
+      <h1 class="greeting-title">
         Hi
-        <span id="name"></span>
+        <span id="name">Anisa Aulia</span>
       </h1>
-      <p class="two" id="greetingText">I really like your name btw!</p>
+      <p class="greeting-subtitle" id="greetingText">I Really Love You ❤️</p>
+    </div>
+
+    <div class="two">
+      <p class="birthday-message">Today is your special day, my love!</p>
     </div>
 
     <div class="three">
-      <p>Hari Ini 31 Agustus 2022 Ulang Tahun Kamu Yang Ke 20Th</p>
+      <div class="message-box">
+        <p class="message-text">
+          Happy birthday to the most amazing person in my life! Every moment with you feels like a blessing. May your day be filled with joy, laughter, and all the love you deserve. You're my sunshine, my everything. I love you more than words can express! 💖
+        </p>
+        <div class="send-btn">Send with love</div>
+      </div>
     </div>
 
     <div class="four">
-      <div class="text-box">
-        <p class="hbd-chatbox">
-          Happy birthday pendamping hidupku! Semoga menjadi pribadi yang semakin baik, sukses, dan tentunya selalu sayang dan cinta aku juga. I love you.
-        </p>
-        <p class="fake-btn">Kirim</p>
-      </div>
-    </div>
-
-    <div class="five">
-      <p class="idea-1">Aku gabisa mendapatkan</p>
-      <p class="idea-2">Kebahagiaan jika tanpa kamu</p>
-      <p class="idea-3">Aku sadar, aku ingin melakukan sesuatu yang <strong>Spesial</strong></p>
-      <p class="idea-4">karna</p>
-      <p class="idea-5">
-        Kamu Spesial
-        <span>:)</span>
+      <p class="thought thought-1">You are the reason</p>
+      <p class="thought thought-2">For my happiness each day</p>
+      <p class="thought thought-3">I want to do something <span class="special-text">Extra Special</span> for you</p>
+      <p class="thought thought-4">Because</p>
+      <p class="thought heart-text thought-5">
+        You're Special To Me
+        <span>💕</span>
       </p>
-      <p class="idea-6">
-        <span>J</span>
-        <span>A</span>
-        <span>D</span>
-        <span>I</span>
+      <p class="thought big-text thought-6">
+        <span>L</span>
+        <span>O</span>
+        <span>V</span>
+        <span>E</span>
       </p>
     </div>
 
-    <div class="six">
+    <div class="five birthday-section">
       <img src="./img/orang.jpg" alt="profile" class="profile-picture" id="imagePath"/>
-      <img src="img/hat.svg" alt="hat" class="hat" />
+      <img src="/img/hat.svg" alt="birthday hat" class="hat" />
       <div class="wish">
-        <h3 class="wish-hbd">SELAMAT ULANG TAHUN!</h3>
-        <h5 id="wishText">SEMOGA BAHAGIA MENYERTAIMU YA SAYANG ;)</h5>
+        <h3 class="wish-hbd">Happy Birthday, My Love!</h3>
+        <h5 class="wish-message" id="wishText">May happiness always be with you, sweetheart! 💕</h5>
       </div>
     </div>
 
-    <div class="seven">
-      <div class="baloons">
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon2.svg" alt="" />
-        <img src="img/ballon1.svg" alt="" />
-        <img src="img/ballon3.svg" alt="" />
-      </div>
+    <div class="six balloons">
+      <!-- Balloons will be added dynamically with JavaScript -->
     </div>
 
-    <div class="eight">
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
-      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="20" cy="20" r="20" />
-      </svg>
+    <div class="seven confetti">
+      <!-- Confetti will be added dynamically with JavaScript -->
     </div>
 
-    <div class="nine">
-      <p>Oke, sudah selesai.</p>
-      <p id="replay">Klik disini untuk melihatnya kembali.</p>
-      <p class="last-smile">:)</p>
+    <div class="eight hearts">
+      <!-- Hearts will be added dynamically with JavaScript -->
+    </div>
+
+    <div class="nine final-section">
+      <p>I hope you enjoyed your surprise!</p>
+      <p id="replay">Click here to watch it again</p>
+      <p class="last-smile">❤️</p>
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script>
+    // Create and add balloons
+    const createBalloons = () => {
+      const balloonColors = ['#ff85a2', '#7ec4cf', '#ffd639', '#9d65c9', '#5d9cec', '#fc6e51'];
+      const balloonsContainer = document.querySelector('.balloons');
+      
+      for (let i = 0; i < 20; i++) {
+        const balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+        
+        // Random positioning and timing
+        const size = Math.random() * 30 + 40;
+        const left = Math.random() * 100;
+        const delay = Math.random() * 15;
+        const duration = Math.random() * 5 + 10;
+        const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+        
+        balloon.style.cssText = `
+          left: ${left}%;
+          width: ${size}px;
+          height: ${size * 1.2}px;
+          background-color: ${color};
+          border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+          animation-duration: ${duration}s;
+          animation-delay: ${delay}s;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          z-index: ${Math.floor(Math.random() * 5)};
+        `;
+        
+        // Add balloon string
+        const string = document.createElement('div');
+        string.style.cssText = `
+          position: absolute;
+          width: 1px;
+          height: ${size * 1.5}px;
+          background-color: rgba(0,0,0,0.2);
+          bottom: -${size * 1.5}px;
+          left: 50%;
+        `;
+        
+        balloon.appendChild(string);
+        balloonsContainer.appendChild(balloon);
+      }
+    };
+    
+    // Create and add confetti
+    const createConfetti = () => {
+      const confettiContainer = document.querySelector('.confetti');
+      const colors = ['#ff85a2', '#7ec4cf', '#ffd639', '#9d65c9', '#5d9cec', '#fc6e51'];
+      
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti-piece');
+        
+        const size = Math.random() * 10 + 5;
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const left = Math.random() * 100;
+        const delay = Math.random() * 5;
+        const duration = Math.random() * 5 + 8;
+        
+        confetti.style.cssText = `
+          left: ${left}%;
+          width: ${size}px;
+          height: ${size * (Math.random() * 0.8 + 0.4)}px;
+          background-color: ${color};
+          animation: fall ${duration}s ease-in infinite;
+          animation-delay: ${delay}s;
+          transform: rotate(${Math.random() * 360}deg);
+          border-radius: ${Math.random() > 0.5 ? '50%' : '0'};
+        `;
+        
+        confettiContainer.appendChild(confetti);
+      }
+    };
+    
+    // Create and add hearts
+    const createHearts = () => {
+      const heartsContainer = document.querySelector('.hearts');
+      
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        
+        const size = Math.random() * 15 + 10;
+        const left = Math.random() * 100;
+        const delay = Math.random() * 5;
+        const duration = Math.random() * 5 + 10;
+        const opacity = Math.random() * 0.5 + 0.3;
+        
+        heart.style.cssText = `
+          left: ${left}%;
+          width: ${size}px;
+          height: ${size}px;
+          opacity: ${opacity};
+          animation: float-up ${duration}s ease-in-out infinite;
+          animation-delay: ${delay}s;
+        `;
+        
+        heartsContainer.appendChild(heart);
+      }
+    };
+    
+    // Animation timeline
+    const animationTimeline = () => {
+      // Split chars for animation
+      const messageText = document.querySelector(".message-text");
+      messageText.innerHTML = `<span>${messageText.innerHTML
+        .split("")
+        .join("</span><span>")}</span>`;
+        
+      const wishHbd = document.querySelector(".wish-hbd");
+      wishHbd.innerHTML = `<span>${wishHbd.innerHTML
+        .split("")
+        .join("</span><span>")}</span>`;
+      
+      // Create animation timeline
+      const tl = gsap.timeline();
+      
+      tl.to(".container", {
+        visibility: "visible",
+        duration: 0.6
+      })
+      .from(".one", {
+        opacity: 0,
+        y: 30,
+        duration: 0.7
+      })
+      .from(".greeting-subtitle", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7,
+        ease: "power2.out"
+      })
+      .to(".one", {
+        opacity: 0,
+        y: -50,
+        duration: 0.7,
+        delay: 2
+      })
+      .from(".two", {
+        opacity: 0,
+        y: 30,
+        duration: 0.7
+      })
+      .to(".two", {
+        opacity: 0,
+        y: -50,
+        duration: 0.7,
+        delay: 1
+      })
+      .from(".three", {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.7,
+        ease: "back.out(1.7)"
+      })
+      .from(".send-btn", {
+        scale: 0,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.out(1.7)"
+      })
+      .staggerTo(
+        ".message-text span",
+        0.05, {
+          visibility: "visible",
+          duration: 0.1,
+          ease: "none"
+        },
+        0.03
+      )
+      .to(".send-btn", {
+        backgroundColor: "#ff5c8d",
+        scale: 1.1,
+        duration: 0.2,
+        delay: 2,
+        yoyo: true,
+        repeat: 1
+      })
+      .to(".three", {
+        scale: 0.5,
+        opacity: 0,
+        y: -150,
+        duration: 0.7,
+        delay: 1
+      })
+      .from(".thought-1", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7
+      })
+      .to(".thought-1", {
+        opacity: 0,
+        y: -30,
+        duration: 0.7,
+        delay: 1.5
+      })
+      .from(".thought-2", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7
+      })
+      .to(".thought-2", {
+        opacity: 0,
+        y: -30,
+        duration: 0.7,
+        delay: 1.5
+      })
+      .from(".thought-3", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7
+      })
+      .to(".special-text", {
+        scale: 1.2,
+        backgroundColor: "#ffd639",
+        color: "#2e3e50",
+        duration: 0.3,
+        yoyo: true,
+        repeat: 1
+      })
+      .to(".thought-3", {
+        opacity: 0,
+        y: -30,
+        duration: 0.7,
+        delay: 1.5
+      })
+      .from(".thought-4", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7
+      })
+      .to(".thought-4", {
+        opacity: 0,
+        y: -30,
+        duration: 0.7,
+        delay: 1
+      })
+      .from(".thought-5", {
+        opacity: 0,
+        scale: 0.5,
+        rotation: 5,
+        duration: 0.7,
+        ease: "back.out(1.7)"
+      })
+      .to(".heart-text span", {
+        rotation: 360,
+        duration: 1,
+        ease: "bounce.out"
+      })
+      .to(".thought-5", {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.7,
+        delay: 2
+      })
+      .staggerFrom(".big-text span", 0.5, {
+        scale: 0,
+        opacity: 0,
+        rotation: 90,
+        ease: "back.out(1.7)"
+      }, 0.2)
+      .staggerTo(".big-text span", 0.5, {
+        scale: 0,
+        opacity: 0,
+        rotation: -90,
+        ease: "back.in(1.7)",
+        delay: 1
+      }, 0.2)
+      .from(".birthday-section", {
+        opacity: 0,
+        scale: 0.5,
+        duration: 1,
+        ease: "power4.out"
+      })
+      .from(".profile-picture", {
+        scale: 0,
+        opacity: 0,
+        rotation: -45,
+        duration: 0.7,
+        ease: "back.out(1.7)"
+      })
+      .from(".hat", {
+        x: -50,
+        y: -100,
+        rotation: -90,
+        opacity: 0,
+        duration: 0.5,
+        ease: "back.out(1.7)"
+      })
+      .staggerFrom(".wish-hbd span", 0.5, {
+        opacity: 0,
+        y: -50,
+        rotation: 180,
+        ease: "back.out(1.7)"
+      }, 0.05)
+      .from(".wish-message", {
+        opacity: 0,
+        y: 20,
+        duration: 0.7
+      }, "-=1")
+      .to(".birthday-section", {
+        opacity: 0,
+        y: 100,
+        scale: 0.5,
+        duration: 0.7,
+        delay: 4
+      })
+      .from(".final-section p", {
+        opacity: 0,
+        y: 20,
+        stagger: 0.3,
+        duration: 0.7,
+        ease: "back.out(1.7)"
+      })
+      .to(".last-smile", {
+        rotation: 360,
+        scale: 1.5,
+        duration: 1,
+        ease: "elastic.out(1, 0.3)"
+      });
+      
+      // Initialize animation elements
+      createBalloons();
+      createConfetti();
+      createHearts();
+      
+      // Add fall animation for confetti
+      document.head.insertAdjacentHTML('beforeend', `
+        <style>
+          @keyframes fall {
+            0% {
+              top: -10%;
+              opacity: 0;
+              transform: translateX(0) rotate(0deg);
+            }
+            10% {
+              opacity: 1;
+            }
+            100% {
+              top: 100%;
+              opacity: 0.7;
+              transform: translateX(${Math.random() > 0.5 ? '+' : '-'}100px) rotate(${Math.random() * 360}deg);
+            }
+          }
+        </style>
+      `);
+      
+      // Restart Animation on click
+      const replayBtn = document.getElementById("replay");
+      replayBtn.addEventListener("click", () => {
+        tl.restart();
+      });
+      
+      // Customize content from JSON
+      const customize = {
+        "name": "Anisa Aulia",
+        "greetingText": "I Really Love You",
+        "wishText": "May happiness always be with you, sweetheart! 💕",
+        "imagePath": "./img/orang.jpg"
+      };
+      
+      // Apply customizations
+      document.getElementById("name").textContent = customize.name;
+      document.getElementById("greetingText").textContent = customize.greetingText;
+      document.getElementById("wishText").textContent = customize.wishText;
+      document.getElementById("imagePath").setAttribute("src", customize.imagePath);
+    };
+    
+    // Trigger to play music in the background with sweetalert
+    window.addEventListener('load', () => {
+      Swal.fire({
+        title: 'Play Music?',
+        text: 'For the best experience, let me serenade you 🎵',
+        icon: 'question',
+        background: 'rgba(255, 255, 255, 0.8)',
+        backdrop: 'rgba(255, 133, 162, 0.2)',
+        showCancelButton: true,
+        confirmButtonColor: '#ff85a2',
+        cancelButtonColor: '#7ec4cf',
+        confirmButtonText: 'Yes, please!',
+        cancelButtonText: 'No, thanks',
+        customClass: {
+          popup: 'swal-custom-popup',
+          title: 'swal-custom-title',
+          content: 'swal-custom-content'
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          document.querySelector('.song').play();
+          animationTimeline();
+        } else {
+          animationTimeline();
+        }
+      });
+    });
+  </script>
 </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-  <script type="application/javascript" src="script/main.js"></script>
-
 </html>
