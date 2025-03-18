@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Happy Birthday My Love 💕</title>
-  <link rel="shortcut icon" type="image/png" href="/api/placeholder/32/32" />
+  <link rel="shortcut icon" type="image/png" href="/img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Dancing+Script:wght@400;700&display=swap"
@@ -310,7 +310,7 @@
       margin: 15px 0;
     }
 
-    #replay {
+    .replay {
       color: var(--primary-color);
       cursor: pointer;
       font-weight: bold;
@@ -318,7 +318,7 @@
       transition: all 0.3s ease;
     }
 
-    #replay:hover {
+    .replay:hover {
       color: var(--secondary-color);
       transform: scale(1.05);
     }
@@ -409,7 +409,7 @@
 
 <body>
   <audio class="song" loop autoplay>
-    <source src="./music/where.mp3">
+    <source src="./music/sound.mp3">
     </source>
     Your browser isn't invited for super fun audio time.
   </audio>
@@ -418,33 +418,32 @@
     <div class="one">
       <h1 class="greeting-title">
         Hi
-        <span id="name">Ardianto</span>
+        <span id="name">Ardi</span>
       </h1>
-      <p class="greeting-subtitle" id="greetingText">I Really Love You ❤️</p>
+      <p class="greeting-subtitle" id="greetingText">Aku Sangat Sangat Sangat Mencintaimu ❤️</p>
     </div>
 
     <div class="two">
-      <p class="birthday-message">Today is your special day, my love!</p>
+      <p class="birthday-message">Hari ini adalah hari spesialmu, cintaku!</p>
     </div>
 
     <div class="three">
       <div class="message-box">
         <p class="message-text">
-          Happy birthday to the most amazing person in my life! Every moment with you feels like a blessing. May your
-          day be filled with joy, laughter, and all the love you deserve. You're my sunshine, my everything. I love you
-          more than words can express! 💖
+          Selamat ulang tahun untuk orang paling luar biasa dalam hidupku! Setiap momen denganmu terasa seperti berkah. Semoga
+          harimu diisi dengan kebahagiaan, tawa, dan semua cinta yang pantas kamu dapatkan. Kamu adalah sinar matahariku, segalanya. Saya mencintaimu lebih dari kata-kata yang dapat diungkapkan! 💖
         </p>
-        <div class="send-btn">Send with love</div>
+        <div class="send-btn">Kirim dengan cinta</div>
       </div>
     </div>
 
     <div class="four">
-      <p class="thought thought-1">You are the reason</p>
-      <p class="thought thought-2">For my happiness each day</p>
-      <p class="thought thought-3">I want to do something <span class="special-text">Extra Special</span> for you</p>
-      <p class="thought thought-4">Because</p>
+      <p class="thought thought-1">Kamu adalah alasan</p>
+      <p class="thought thought-2">Untuk kebahagiaanku setiap hari</p>
+      <p class="thought thought-3">Aku ingin melakukan sesuatu yang <span class="special-text">Sangat Spesial</span> untukmu</p>
+      <p class="thought thought-4">Karena</p>
       <p class="thought heart-text thought-5">
-        You're Special To Me
+        Kamu Sangat Spesial Bagiku
         <span>💕</span>
       </p>
       <p class="thought big-text thought-6">
@@ -459,8 +458,8 @@
       <img src="./img/orang.jpg" alt="profile" class="profile-picture" id="imagePath" />
       <img src="/img/hat.svg" alt="birthday hat" class="hat" />
       <div class="wish">
-        <h3 class="wish-hbd">Happy Birthday, My Love!</h3>
-        <h5 class="wish-message" id="wishText">May happiness always be with you, sweetheart! 💕</h5>
+        <h3 class="wish-hbd">Selamat Ulang Tahun Cintaku!</h3>
+        <h5 class="wish-message" id="wishText">Semoga kebahagiaan selalu bersamamu, sayang! 💕</h5>
       </div>
     </div>
 
@@ -477,8 +476,8 @@
     </div>
 
     <div class="nine final-section">
-      <p>I hope you enjoyed your surprise!</p>
-      <p id="replay">Click here to watch it again</p>
+      <p>Aku berharap kamu menikmati kejutanmu!</p>
+      <p id="replay">Klik di sini untuk menontonnya lagi</p>
       <p class="last-smile">❤️</p>
     </div>
   </div>
@@ -840,9 +839,9 @@
 
       // Customize content from JSON
       const customize = {
-        "name": "Ardianto",
-        "greetingText": "I Really Love You",
-        "wishText": "May happiness always be with you, sweetheart! 💕",
+        "name": "Ardi",
+        "greetingText": "Aku Sangat Sangat Sangat Mencintaimu ❤️",
+        "wishText": "Semoga kebahagiaan selalu bersamamu, sayang! 💕",
         "imagePath": "./img/orang.jpg"
       };
 
